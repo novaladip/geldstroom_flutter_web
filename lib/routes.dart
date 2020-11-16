@@ -25,6 +25,11 @@ class Routes {
       LoginPage.routeName,
       handler: createHandler((context, parameters) => LoginPage()),
     );
+
+    router.define(
+      OnboardingPage.routeName,
+      handler: createHandler((context, parameters) => OnboardingPage()),
+    );
   }
 
   // createHandler

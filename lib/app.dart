@@ -22,7 +22,7 @@ class App extends StatelessWidget {
         textTheme: Theme.of(context).textTheme.apply(
               bodyColor: AppStyles.textLight,
               displayColor: AppStyles.textLight,
-              fontFamily: GoogleFonts.acme().fontFamily,
+              fontFamily: GoogleFonts.karla().fontFamily,
             ),
       ),
       onGenerateRoute: Routes.router.generator,
