@@ -16,7 +16,8 @@ class MainButton extends StatelessWidget {
     this.loading = false,
     this.disabled = false,
     this.maxWidth = double.infinity,
-    this.color = AppStyles.darkBackground,
+    this.minWidth = 100,
+    this.color = AppStyles.buttonColor,
     this.textColor = Colors.white,
   }) : super(key: key);
 
@@ -25,6 +26,7 @@ class MainButton extends StatelessWidget {
   final bool loading;
   final bool disabled;
   final double maxWidth;
+  final double minWidth;
   final Color color;
   final Color textColor;
 
@@ -35,10 +37,10 @@ class MainButton extends StatelessWidget {
     return Styled.widget(
       child: child,
     )
-        .constrained(minWidth: 100, maxWidth: maxWidth)
+        .constrained(minWidth: minWidth, maxWidth: maxWidth)
         .padding(
-          vertical: context.sizeBuilder(base: 6, xs: 4),
-          horizontal: context.sizeBuilder(base: 8, xs: 6),
+          vertical: context.sizeBuilder(base: 10, xs: 8),
+          horizontal: context.sizeBuilder(base: 13, xs: 10),
         )
         .decorated(
           color: color,
@@ -52,7 +54,7 @@ class MainButton extends StatelessWidget {
   Widget buttonText(BuildContext context) {
     return Text(title, key: Key('$kMainButtonTitleBaseKey$title'))
         .textAlignment(TextAlign.center)
-        .fontSize(context.sizeBuilder(base: 14, xs: 13))
+        .fontSize(context.sizeBuilder(base: 16, xs: 14))
         .textColor(textColor);
   }
 
