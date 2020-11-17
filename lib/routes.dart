@@ -8,6 +8,16 @@ typedef CreateHandler = Widget Function(
   Map<String, List<String>> parameters,
 );
 
+class _AppRouter {
+  const _AppRouter(
+    this.routeName,
+    this.widget,
+  );
+
+  final String routeName;
+  final Widget widget;
+}
+
 class Routes {
   static FluroRouter router;
 
@@ -16,20 +26,19 @@ class Routes {
       handlerFunc: (context, params) => HomePage(),
     );
 
-    router.define(
-      HomePage.routeName,
-      handler: createHandler((context, parameters) => HomePage()),
-    );
+    final appRouters = [
+      _AppRouter(HomePage.routeName, HomePage()),
+      _AppRouter(OnboardingPage.routeName, OnboardingPage()),
+      _AppRouter(LoginPage.routeName, LoginPage()),
+      _AppRouter(ResetPasswordPage.routeName, ResetPasswordPage()),
+    ];
 
-    router.define(
-      LoginPage.routeName,
-      handler: createHandler((context, parameters) => LoginPage()),
-    );
-
-    router.define(
-      OnboardingPage.routeName,
-      handler: createHandler((context, parameters) => OnboardingPage()),
-    );
+    for (var appRouter in appRouters) {
+      router.define(
+        appRouter.routeName,
+        handler: createHandler((context, parameters) => appRouter.widget),
+      );
+    }
   }
 
   // createHandler
