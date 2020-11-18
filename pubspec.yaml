@@ -10,33 +10,24 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  # Router  
+  equatable: ^1.2.5
   fluro: ^1.7.7
-  
-  # Widget
   flutter_spinkit: ^4.1.2+1
-  introduction_screen: ^1.0.9
-
-  # UI Helper
-  styled_widget: ^0.2.2
-  
-  # Font
-  google_fonts: ^1.1.1
-
-  # Code Generator
   freezed_annotation: ^0.12.0
+  google_fonts: ^1.1.1
+  introduction_screen: ^1.0.9
+  styled_widget: ^0.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  effective_dart: ^1.3.0
-  network_image_mock: ^1.0.2
   bloc_test: ^7.0.4
-  build_runner: 
+  build_runner: null
+  effective_dart: ^1.3.0
   freezed: ^0.12.2
   injectable_generator: ^1.0.6
   mockito: 4.1.1
+  network_image_mock: ^1.0.2
 
 flutter:
   uses-material-design: true
